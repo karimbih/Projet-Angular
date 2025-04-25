@@ -20,6 +20,12 @@ export class AddBookComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
+    this.bookForm = this.fb.group({
+      title: ['',Validators.required],
+      author: ['',Validators.required],
+      description: ['',Validators.required],
+      category: ['',Validators.required]
+    });
     // TODO 6 : Créer un formulaire avec les champs suivants : title, author, description, category
     // TODO 7 : Ajouter les validations nécessaires
   }
@@ -29,6 +35,7 @@ export class AddBookComponent implements OnInit {
       this.bookService.addBook(this.bookForm.value).subscribe({
         next: () => {
           this.router.navigate(['/books']);
+          alert('livre ajouté');
         },
         error: (err: any) => {
           console.error('Erreur lors de l\'ajout du livre', err);
