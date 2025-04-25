@@ -41,9 +41,11 @@ export class BookListComponent implements OnInit {
   toggleFavorite(book: Book): void {
     this.bookService.toggleFavorite(book.id).subscribe({
       next: (updatedBook: Book) => {
+        alert('le favori a été modifié avec succès.');
         // TODO 16: Affiche une alerte qui indique que le favori a été modifié
       },
       error: (err: any) => {
+        alert('Erreur lors de la modification du favori');
         // TODO 17: Affiche une alerte qui indique que la modification du favori a échoué
         console.error('Erreur lors de la modification du favori:', err);
       }
