@@ -12,3 +12,4 @@ export const routes: Routes = [
   { path: 'books/:id', component: BookDetailComponent },
   { path: '**', redirectTo: '' }
 ];
+

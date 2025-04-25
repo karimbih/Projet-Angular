@@ -1,8 +1,11 @@
 <div class="book-detail-container">
-  <div class="book-card">
+
+  <button (click)="goBack()">← Retour</button>
+
+  <div class="book-card" *ngIf="book">
     <!-- TODO 9: Dans la console on voit cette erreur : main.ts:5 ERROR TypeError: Cannot read properties of undefined (reading 'title')
      En realité on affiche le titre du livre avant qu'il ne soit défini. Fix le bug -->
-    <h1 class="book-title">{{ book.title }}</h1> <!-- TODO 10: Appliquer la directive highlight à ce champ -->
+    <h1 class="book-title" [appHighlight]="true">{{ book.title }}</h1> <!-- TODO 10: Appliquer la directive highlight à ce champ -->
     
     <div class="book-info">
       <p class="author">{{ book.author }}</p>
