@@ -4,11 +4,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book.model';
 import { Location } from '@angular/common';
+import { HighlightDirective } from '../../directives/highlight.directive';
+import { CapitalizePipe } from '../../capitalize.pipe';
 
 @Component({
   selector: 'app-book-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HighlightDirective, CapitalizePipe],
   templateUrl: 'book-detail.component.html',
 })
 export class BookDetailComponent implements OnInit {
